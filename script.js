@@ -1,4 +1,3 @@
-
 const searchInput = document.querySelector('.search');
 const celcius = document.querySelector('.celcius');
 const farenheit = document.querySelector('.farenheit');
@@ -29,88 +28,6 @@ function err() {
 };
 
 searchInput.value = '';
-
-// FETCH X THEN
-
-// function getWeather() {
- 
-   
-//     .then(res => {
-//             if(!res.ok) throw new Error(err);
-//             return res.json();
-//     }).then(data => {
-//       const  {current, location} = data;
-//       const now = new Date(location.localtime);
-//        const day = `${weekday[now.getDay() - 1]}`;
-//        const months = `${month[now.getMonth()]}`;
-//        const dates = `${now.getDate()}`;
-//        const year = `${now.getFullYear()}`;
-//        const hour = `${now.getHours()}`.padStart(2, 0);
-//        const minute = `${now.getMinutes()}`.padStart(2, 0);
-
-//        dCelcius = current.temp_c;
-//        dFarenheit = current.temp_f;
-//        realTempC = current.feelslike_c;
-//        realTempF = current.feelslike_f;
-
-//        // Show weather data
-//     locationArea.textContent = `${location.name}, ${location.country}`;
-//     date.textContent = `${day},${months}  ${dates}, ${year} at ${hour}:${minute}`;
-//     condition.textContent = current.condition.text;
-//     console.log(current.condition.icon);
-//       image.src = current.condition.icon;
-//       temperature.textContent = `${current.temp_c}°`;
-//       feelsLike.textContent = `${current.feelslike_c}°`;
-//       humidity.textContent = `${current.humidity}%`;
-//       windSpeed.textContent = `${current.wind_kph} kph`;
-//       pressure.textContent = `${current.pressure_mb} hPa`;
-
-//       if(farenheit.classList.contains('active')){
-//         temperature.textContent = `${current.temp_f}°`;
-//       feelsLike.textContent = `${current.feelslike_f}°`;
-//       }
-
-//       // Display container
-//       val.classList.remove('hidden')
-//       infoContainer.classList.remove('hidden');
-//       errorContainer.classList.add('hidden')
-//     }).catch(() => err())
-// }
-
-// window.addEventListener('keydown', (e) => {
-//   if(e.key !== 'Enter') return
-//   getWeather();
-//   searchInput.value = '';
-// })
-
-// celcius.addEventListener('click', ()=>{
-//   celcius.classList.add('active');
-//   farenheit.classList.remove('active');
-//   const temp = 5/9*(dFarenheit - 32);
-//   temperature.textContent = `${temp.toFixed(1)}°`;
-//   feelsLike.textContent = `${(5/9*(realTempF - 32.)).toFixed(1)}°`;
-
-//   });
-  
-//   farenheit.addEventListener('click', ()=>{
-//   farenheit.classList.add('active');
-//   celcius.classList.remove('active');
-//   const temp = ((dCelcius) * 9/5) + 32;
-//   temperature.textContent = `${temp.toFixed(1)}°`;
-//   feelsLike.textContent = `${(((realTempC) * 9/5) + 32).toFixed(1)}°`;
-
-//   });
-
-// fetch(`http://api.weatherapi.com/v1/current.json?key=94f0140b1a77421492685656232807&q=Abidjan&aqi=no`).then(res => res.json()).then(data => console.log(data));
-
-function getJson(url, errmsg) {
-  return fetch(url).then((response) =>{
-      
-    if(!response.ok)
-  throw new Error(errmsg);
-     return response.json();
-    })
-  }
 
 
   // ASYNC AWAIT
@@ -193,9 +110,3 @@ window.addEventListener('keydown', (e) => {
   getWeather();
   searchInput.value = '';
 })
-
-
-// console.log();
-// fetch('http://api.weatherstack.com/current?access_key=b071d9fc208a96771e27c204681645ba&query=new york').then(
-//   res => console.log(res.json())
-// )
